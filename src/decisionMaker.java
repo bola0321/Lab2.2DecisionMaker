@@ -6,16 +6,16 @@ public class decisionMaker {
 		// ask user for number 1-100
 		// output based on user number
 		// ask user to loop program
-		
-		
-		
-		//TODO: finish loop and figure out the darn scnr.close
 
 		Scanner scnr = new Scanner(System.in);
 		int userNum;
 		boolean cont = true;
-		do {	
-			System.out.print("Enter a number between 1 and 100: ");
+		String yesNo;
+		
+		//Intro program, get user input, and logic
+		System.out.println("Welcome to the Decision Maker by Bolanle Aduroja." );
+		do {
+			System.out.print("\n" + "Enter a number between 1 and 100: ");
 			userNum = scnr.nextInt();
 			if (userNum % 2 == 1 && userNum > 60) {
 				System.out.println("Odd and over 60.");
@@ -28,9 +28,23 @@ public class decisionMaker {
 			} else {
 				System.out.println("Even.");
 			}
-			
-			scnr.close();
-		}while (cont == true);
+
+			// ask user to continue
+			do {
+				System.out.print("\n" + "Continue? (y/n): ");
+				yesNo = scnr.next().trim().toLowerCase();
+
+			} while (!yesNo.equals("n") && !yesNo.equals("y"));
+
+			if (yesNo.equals("n")) {
+				cont = false;
+				System.out.println("\n" + "Thank you for using the Decision Maker.");
+
+			}
+
+		} while (cont == true);
+
+		scnr.close();
 	}
 
 }
