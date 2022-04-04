@@ -34,6 +34,7 @@ public class decisionMaker {
 				System.out.print("\n" + "Continue? (y/n): ");
 				yesNo = scnr.next().trim().toLowerCase();
 
+				
 			} while (!yesNo.equals("n") && !yesNo.equals("y"));
 
 			if (yesNo.equals("n")) {
